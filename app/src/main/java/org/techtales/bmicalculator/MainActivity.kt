@@ -50,10 +50,20 @@ class MainActivity : AppCompatActivity() {
                 color = R.color.over_weight
                 range = "(Overweight range is less than 18.50)"
             }
-            bmi > 29.99 ->{
-                result = "Obese"
+            bmi in 30.00..34.99 ->{
+                result = "Obesity (Class 1)"
                 color = R.color.obese
-                range = "(Obese range is greater than 29.99)"
+                range = "(Obese range is between 30 and 34.99)"
+            }
+            bmi in 35.00..39.99 ->{
+                result = " Obesity (Class 2)"
+                color = R.color.obese
+                range = "(Obese range is between 35 and 39.99)"
+            }
+            bmi > 39.99 ->{
+                result = "Obesity (Class 3)"
+                color = R.color.obese
+                range = "(Obese range is 40 or greater (severe obesity))"
             }
         }
         binding.healthStatus.text = result
